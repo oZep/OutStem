@@ -16,8 +16,6 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 
 const ReviewChart = () => {
-
-    const firstReview = ReviewData.length > 0 ? ReviewData[0] : null;
     const reviewsTotal = {};
 
     ReviewData.forEach((review) => {
@@ -62,7 +60,7 @@ console.log("ReviewData:", Object.keys(reviewsTotal));
         plugins: {
             legend: {
                 display: true,
-                position: 'left',
+                position: 'right',
                 labels: {
                     boxWidth: 36,
                     fontColor: 'black',
@@ -75,15 +73,12 @@ console.log("ReviewData:", Object.keys(reviewsTotal));
     return (
         <div>
             <h2>Review Chart</h2>
-
-            {firstReview && (
             <div>
-                <h3>Reviews:</h3>
+                <h3>Reviews on the Slices of Pie</h3>
                 <div className='pi-container'>
                     <Pie data={data} options={options}/>
                 </div>
             </div>
-            )}
         </div>
   );
 };
