@@ -1,6 +1,6 @@
 import React from 'react';
 import ReviewData from '../data/review_data.json';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { Chart as ChartJS, ArcElement, Tooltip, Title, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
 
 
@@ -12,7 +12,7 @@ canvas with ID '' can be reused
 AND
 "arc" is not a registered element.
 */
-ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(ArcElement, Tooltip, Title, Legend);
 
 
 const ReviewChart = () => {
@@ -38,11 +38,11 @@ console.log("ReviewData:", Object.keys(reviewsTotal));
             {
                 data: Object.values(reviewsTotal),
                 backgroundColor: [        
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
+                'rgba(54, 162, 235, 0.4)',
+                'rgba(255, 206, 86, 0.4)',
+                'rgba(75, 192, 192, 0.4)',
+                'rgba(153, 102, 255, 0.4)',
+                'rgba(255, 159, 64, 0.4)',
             ],
                 borderColor: [
                     'rgba(54, 162, 235, 1)',
@@ -66,6 +66,10 @@ console.log("ReviewData:", Object.keys(reviewsTotal));
                     fontColor: 'black',
                 },
             },
+            title: {
+                display: true,
+                text: 'Reviews at the Slices of Pi'
+            }
         },
     };
     
@@ -74,7 +78,6 @@ console.log("ReviewData:", Object.keys(reviewsTotal));
         <div>
             <h2>Review Chart</h2>
             <div>
-                <h3>Reviews on the Slices of Pie</h3>
                 <div className='pi-container'>
                     <Pie data={data} options={options}/>
                 </div>

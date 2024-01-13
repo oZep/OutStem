@@ -5,7 +5,6 @@ import OrderChart from './OrderChart'
 const Dashboard = () => {
   return (
     <div>
-      <h1>Slice of Pi Dashboard</h1>
       <ReviewChart />
       <OrderChart />
     </div>
