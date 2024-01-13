@@ -1,12 +1,12 @@
 import React from 'react';
-import Chart from './Chart';
+import ReviewChart from './ReviewChart';
 
 const Dashboard = () => {
   return (
     <div>
       <h1>Slice of Pi Dashboard</h1>
-      <p>Dashboard COmponent</p>
-      <Chart />
+      <p>Dashboard Component</p>
+      <ReviewChart />
     </div>
   );
 };
