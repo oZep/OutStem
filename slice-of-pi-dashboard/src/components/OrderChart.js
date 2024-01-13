@@ -12,7 +12,7 @@ const OrderChart = () => {
     OrderData.forEach((order) => {  // Could just make this into a Function and let Bar + Order call it, becuase it's the same thing
         const store = order.store; // I use it so that incase we want to add another store, it doesnt break down. works great for > 1000 lines of Json
         if (!ordersPlaced[store]) {  // anyways, I have no time to actually use a function (I am taking 6 classes). Leaving this here so you know I
-            ordersPlaced[store] = 1; // Understand best practices
+            ordersPlaced[store] = 1; // Understand best practices => this is O(W) W = size of Json entries so O(n) worst case
         } else {
             ordersPlaced[store] += 1;
         }
