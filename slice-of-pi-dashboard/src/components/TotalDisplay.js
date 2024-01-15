@@ -16,7 +16,7 @@ const TotalDisplay = () => {
         const type = order.items.type;
         const size = order.items.zie;
 
-
+        // try directly matching to the same values in the other json file 
         if (!ordersPlaced[store]) {  
             ordersPlaced[store] = {}; 
         } 
