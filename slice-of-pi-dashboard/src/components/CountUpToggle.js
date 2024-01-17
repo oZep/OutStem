@@ -1,13 +1,14 @@
 import React from 'react';
-import { CountUp } from 'use-count-up'
+import CountUp  from 'react-countup';
 
 const CountUpToggle = ({total}) => {
 
     return (
-        <div>
+        <div style={{ fontSize: "50px" }}>
             <CountUp 
-            end={total}
-            duration={3}
+                start={0}
+                end={total}
+                duration={1}
             />
         </div>
   );
