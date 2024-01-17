@@ -1,7 +1,7 @@
 import React from 'react';
-import CountUpToggle from './CountUpToggle';
 import PricingData from '../data/pricing_data.json';
 import OrderData from '../data/order_data.json';
+import CountUp  from 'react-countup';
 
 
 
@@ -37,12 +37,54 @@ const TotalDisplay = () => {
     
     return (
         <div>
-            <CountUpToggle value={grandTotal}/>
-            <CountUpToggle value={moneyMade['Kanata']}/>
-            <CountUpToggle value={moneyMade['Orleans']}/>
-            <CountUpToggle value={moneyMade['Downtown']}/>
-            <CountUpToggle value={moneyMade['Sandy Hill']}/>
-            <CountUpToggle value={moneyMade['The Glebe']}/>
+            <div style={{ fontSize: "40px" }}>
+                <div>Total</div>
+                <CountUp
+                        start={0}
+                        end={grandTotal}
+                        duration={5}
+                />
+            </div>
+            <div style={{ fontSize: "20px" }}>
+                <div>Kanata</div>
+                <CountUp
+                        start={0}
+                        end={moneyMade['Kanata']}
+                        duration={3}
+                />
+            </div>
+            <div style={{ fontSize: "20px" }}>
+                <div>Orleans</div>
+                <CountUp
+                        start={0}
+                        end={moneyMade['Orleans']}
+                        duration={3}
+                />
+            </div>
+            <div style={{ fontSize: "20px" }}>
+                <div>Downtown</div>
+                <CountUp
+                        start={0}
+                        end={moneyMade['Downtown']}
+                        duration={3}
+                />
+            </div> 
+            <div style={{ fontSize: "20px" }}>
+                <div>Sandy Hill</div>
+                <CountUp
+                        start={0}
+                        end={moneyMade['Sandy Hill']}
+                        duration={3}
+                />
+            </div>
+            <div style={{ fontSize: "20px" }}>
+                <div>The Glebe</div>
+                <CountUp
+                        start={0}
+                        end={moneyMade['The Glebe']}
+                        duration={3}
+                />
+            </div>
         </div>
   );
 };
