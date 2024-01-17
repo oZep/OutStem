@@ -21,13 +21,13 @@ const Dashboard = () => {
           <Navbar.Collapse>
             <Nav className="Navi">
               <Nav.Link className="Nav-Link" onClick={() => chartChange('reviews')}>
-                See Reviews
+                Reviews
               </Nav.Link>
               <Nav.Link className="Nav-Link" onClick={() => chartChange('orders')}>
-                See Orders
+                Orders
               </Nav.Link>
               <Nav.Link className="Nav-Link" onClick={() => chartChange('totals')}>
-                See Revenue
+                Revenue
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
