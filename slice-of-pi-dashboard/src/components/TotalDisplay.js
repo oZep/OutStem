@@ -45,7 +45,7 @@ const TotalDisplay = () => {
                         duration={5}
                 />
             </div>
-            <div style={{ fontSize: "20px" }}>
+            <div style={{ fontSize: "20px", display: "inline-block", margin: "10px" }}>
                 <div>Kanata</div>
                 <CountUp
                         start={0}
@@ -53,7 +53,7 @@ const TotalDisplay = () => {
                         duration={3}
                 />
             </div>
-            <div style={{ fontSize: "20px" }}>
+            <div style={{ fontSize: "20px", display: "inline-block", margin: "10px" }}>
                 <div>Orleans</div>
                 <CountUp
                         start={0}
@@ -61,7 +61,7 @@ const TotalDisplay = () => {
                         duration={3}
                 />
             </div>
-            <div style={{ fontSize: "20px" }}>
+            <div style={{ fontSize: "20px", display: "inline-block", margin: "10px" }}>
                 <div>Downtown</div>
                 <CountUp
                         start={0}
@@ -69,7 +69,7 @@ const TotalDisplay = () => {
                         duration={3}
                 />
             </div> 
-            <div style={{ fontSize: "20px" }}>
+            <div style={{ fontSize: "20px", display: "inline-block", margin: "10px" }}>
                 <div>Sandy Hill</div>
                 <CountUp
                         start={0}
@@ -77,7 +77,7 @@ const TotalDisplay = () => {
                         duration={3}
                 />
             </div>
-            <div style={{ fontSize: "20px" }}>
+            <div style={{ fontSize: "20px", display: "inline-block", margin: "10px" }}>
                 <div>The Glebe</div>
                 <CountUp
                         start={0}
