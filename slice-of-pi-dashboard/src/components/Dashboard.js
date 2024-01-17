@@ -5,7 +5,7 @@ import TotalDisplay from './TotalDisplay';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import './Dashboard.css';
 
 const Dashboard = () => {
   const [activeChart, setChart] = useState('reviews');
@@ -15,19 +15,18 @@ const Dashboard = () => {
   }
   return (
     <>
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg" className="Nav-Container">
         <Container>
-          <Navbar.Brand>Management Dashboard</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link onClick={() => chartChange('reviews')}>
+          <Navbar.Brand style={{ fontSize: "30px", fontWeight: "bold" }}>Management Dashboard</Navbar.Brand>
+          <Navbar.Collapse>
+            <Nav className="Navi">
+              <Nav.Link className="Nav-Link" onClick={() => chartChange('reviews')}>
                 See Reviews
               </Nav.Link>
-              <Nav.Link onClick={() => chartChange('orders')}>
+              <Nav.Link className="Nav-Link" onClick={() => chartChange('orders')}>
                 See Orders
               </Nav.Link>
-              <Nav.Link onClick={() => chartChange('totals')}>
+              <Nav.Link className="Nav-Link" onClick={() => chartChange('totals')}>
                 See Revenue
               </Nav.Link>
             </Nav>

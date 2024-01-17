@@ -5,7 +5,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h1>App Component Renders!</h1>
+      <h1>Slice of Pie</h1>
       <Dashboard />
     </div>
   );

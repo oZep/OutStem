@@ -1,0 +1,38 @@
+.Nav-Container {
+    background-color: rgba(255, 159, 64, 1);
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 1rem;
+  }
+
+
+.Navi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.Nav-Link {
+    color: #000000; 
+    padding: 0.5rem 1rem; 
+    border: none;
+    background-color: transparent; 
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.Nav-Link:hover,
+.Nav-Link:focus {
+    background-color: #FFD700;
+    color: black;
+}
+
+.Charts-Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; 
+}
+
