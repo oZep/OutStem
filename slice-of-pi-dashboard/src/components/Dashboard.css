@@ -33,6 +33,9 @@
 .Nav-Link:focus {
     background-color: #FFD700;
     color: black;
+    border-style: solid solid none solid;
+    worder-width: 3px;
+    border-color: black;
 }
 
 .Charts-Container {

@@ -17,7 +17,7 @@ const Dashboard = () => {
     <div className='center-text'>
       <Navbar expand="lg" className="Nav-Container">
         <Container>
-          <Navbar.Brand style={{ fontSize: "30px", fontWeight: "bold" }}>Management Dashboard</Navbar.Brand>
+          <Navbar.Brand style={{ fontSize: "30px", fontWeight: "bold", textDecoration: "underline" }}>Management Dashboard</Navbar.Brand>
           <Navbar.Collapse>
             <Nav className="Navi">
               <Nav.Link className="Nav-Link" onClick={() => chartChange('reviews')}>
