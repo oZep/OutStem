@@ -76,7 +76,7 @@ console.log("ReviewData:", Object.keys(reviewsTotal));
     
 
     return (
-        <div>
+        <div className='center-text'>
             <h2>Review Chart</h2>
             <div>
                 <div className='pi-container'>

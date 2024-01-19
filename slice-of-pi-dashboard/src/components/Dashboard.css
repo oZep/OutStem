@@ -4,6 +4,9 @@
     padding-left: 1rem;
     padding-right: 1rem;
     margin-bottom: 1rem;
+    border-style: none none solid none;
+    worder-width: 3px;
+    border-color: black;
   }
 
 

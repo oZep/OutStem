@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  
 }
 
 .App-logo {
@@ -13,16 +13,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
 .App-link {
   color: #61dafb;
@@ -51,4 +41,39 @@
 }
 
 
+.header-container {
+  padding: 4px;
+  border-style: none none solid none;
+  worder-width: 3px;
+  border-color: black;
+  justify-content: space-between;
+}
 
+
+
+.logo-left {
+  position: absolute;
+  top: 6px;
+  width: 200px;
+  height: 43px;
+  left: 10px;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-image: url('./images/pizza_banner.webp');
+  bacground-color: gray;
+  background-size: contain;
+}
+
+.title {
+  margin: 15px;
+  margin-left: 60px;
+  font-weight: bold;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.logo-container {
+  background-color: white;
+}

@@ -36,7 +36,7 @@ const TotalDisplay = () => {
     */
     
     return (
-        <div>
+        <div className="center-text">
             <div style={{ fontSize: "40px" }}>
                 <div>Total</div>
                 <CountUp

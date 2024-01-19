@@ -5,10 +5,14 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h1>Slice of Pie</h1>
+      <div className="header-container">
+        <div className="logo-container">
+        <div className="logo-left"></div>
+        <div className="title">Slice of Pie</div>
+        </div>
+      </div>
       <Dashboard />
     </div>
   );
 }
-
 export default App;

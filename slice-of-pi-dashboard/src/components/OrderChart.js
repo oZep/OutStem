@@ -62,7 +62,7 @@ const OrderChart = () => {
     
 
     return (
-        <div>
+        <div className='center-text'>
             <h2>Order Chart</h2>
             <div>
                 <div className='bar-container'>

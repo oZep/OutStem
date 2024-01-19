@@ -14,7 +14,7 @@ const Dashboard = () => {
     setChart(chart);
   }
   return (
-    <>
+    <div className='center-text'>
       <Navbar expand="lg" className="Nav-Container">
         <Container>
           <Navbar.Brand style={{ fontSize: "30px", fontWeight: "bold" }}>Management Dashboard</Navbar.Brand>
@@ -38,7 +38,7 @@ const Dashboard = () => {
         {activeChart === 'orders' && <OrderChart />}
         {activeChart === 'totals' && <TotalDisplay />}
       </div>
-    </>
+    </div>
   );
 };
 
