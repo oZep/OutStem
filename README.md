@@ -1,3 +1,3 @@
 # OutStem
 
-# Finsih Parts 1 - 3
+# Finished Parts 1 - 3
