@@ -61,7 +61,7 @@ const MoneyChart = () => {
             },
             title: {
                 display: true,
-                text: 'Total Money Made Per Month for Each Company',
+                text: 'Revenue Generated Per Month for each Location',
             },
         },
     };
