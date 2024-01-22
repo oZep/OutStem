@@ -12,5 +12,4 @@ Goal 3
 Add a display of the total money made in 2023 by computing the price of each pizza sold and adding them all.
 
 Goal 4
-Create a line chart showing how much money was made per month in 2023  
-
+Create a line chart showing how much money was made per month in 2023
