@@ -1,90 +1,78 @@
 import React from 'react';
-import ReviewData from '../data/review_data.json';
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
+import OrderData from '../data/order_data.json';
+import pricingData from '../data/pricing_data.json';
+import { Chart as ChartJS, Title, Tooltip, Legend, LineController, CategoryScale, LinearScale, PointElement, LineElement } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import faker from 'faker';
+
+ChartJS.register(Title, Tooltip, Legend, LineController, CategoryScale, LinearScale, PointElement, LineElement);
 
 
-ChartJS.register(ArcElement, Tooltip, Title, Legend);
+const MoneyChart = () => {
+    const pricingChart = pricingData;
+    const orderData = OrderData;
+    const moneyPerMonth = {
+        Kanata: Array(12).fill(0),
+        Orleans: Array(12).fill(0),
+        'Sandy Hill': Array(12).fill(0),
+        'The Glebe': Array(12).fill(0),
+        Downtown: Array(12).fill(0), 
+    };
 
-
-const MoneyChart = () => { // get data values for each place for each month and calculate the total 
-    const reviewsTotal = {};
-
-    ReviewData.forEach((review) => {
-        const sentiment = review.sentiment;
-        if (!reviewsTotal[sentiment]) {
-            reviewsTotal[sentiment] = 1;
-        } else {
-            reviewsTotal[sentiment] += 1;
-        }
+    orderData.forEach((order) => {
+        const store = order.store;
+        const month = new Date(order.date).getMonth();
+        order.items.forEach((item) => {
+            const type = item.type;
+            const size = item.size;
+            const price = pricingChart[type][size];
+            moneyPerMonth[store][month] += price;
+        });
     });
 
-// console.log("ReviewData:", reviewsTotal);
-console.log("ReviewData:", Object.keys(reviewsTotal));
-// console.log("ReviewData:", Object.values(reviewsTotal));
+    const getBorderColor = (index) => {
+        const colors = ['rgba(54, 162, 235, 1)', 'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'];
+        return colors[index % colors.length];
+    };
 
+    const getBackgroundColor = (index) => {
+        const colors = ['rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)', 'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)'];
+        return colors[index % colors.length];
+    };
 
     const data = {
-        labels: Object.keys(reviewsTotal),
-        datasets: [
-            {
-                label: 'Total',
-                data: dataValues,
-                borderColor: 'rgba(54, 162, 235, 0.4)',
-                backgroundColor: 'rgba(54, 162, 235, 1)',
-              },
-              {
-                label: 'Kanata',
-                data: dataValues,
-                borderColor: 'rgba(255, 206, 86, .7)',
-                backgroundColor: 'rgba(255, 206, 86, 1)',
-              },
-              {
-                label: 'Orleans',
-                data: dataValues,
-                borderColor: 'rgba(75, 192, 192, 0.4)',
-                backgroundColor: 'rgba(75, 192, 192, 1)',
-              },
-              {
-                label: 'Sandy Hill',
-                data: dataValues,
-                borderColor: 'rgba(153, 102, 255, 0.4)',
-                backgroundColor: 'rgba(153, 102, 255, 1)',
-              },
-              {
-                label: 'The Glebe',
-                data: dataValues,
-                borderColor: 'rgba(255, 159, 64, 0.4)',
-                backgroundColor: 'rgba(255, 159, 64, 1)',
-              },
-        ],
+        labels: Array.from({ length: 12 }, (_, i) => i + 1),
+        datasets: Object.keys(moneyPerMonth).map((store, index) => ({
+            label: store,
+            data: moneyPerMonth[store],
+            borderColor: getBorderColor(index), 
+            backgroundColor: getBackgroundColor(index),
+        })),
     };
+
 
     const options = {
         responsive: true,
         plugins: {
-                legend: {
-                    position: 'top',
-                },
-                title: {
-                    display: true,
-                    text: 'Total Money Made Per Month',
-                },
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: true,
+                text: 'Total Money Made Per Month for Each Company',
+            },
         },
     };
-    
 
-    return (
-        <div className='center-text'>
-            <h2>Review Chart</h2>
-            <div>
-                <div className='pi-container'>
-                    <Pie data={data} options={options}/>
-                </div>
-            </div>
+  return (
+    <div className='center-text'>
+        <h2>Money Chart</h2>
+        <div>
+        <div className='line-container bar-container'>
+            <Line data={data} options={options} />
         </div>
-  );
+        </div>
+    </div>
+    );
 };
 
 export default MoneyChart;

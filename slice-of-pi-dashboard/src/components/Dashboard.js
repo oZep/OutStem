@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ReviewChart from './ReviewChart';
 import OrderChart from './OrderChart';
 import TotalDisplay from './TotalDisplay';
+import MoneyChart from './MoneyChart';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -29,6 +30,9 @@ const Dashboard = () => {
               <Nav.Link className="Nav-Link" onClick={() => chartChange('totals')}>
                 Revenue
               </Nav.Link>
+              <Nav.Link className="Nav-Link" onClick={() => chartChange('money')}>
+                Monthly
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -37,6 +41,7 @@ const Dashboard = () => {
         {activeChart === 'reviews' && <ReviewChart />}
         {activeChart === 'orders' && <OrderChart />}
         {activeChart === 'totals' && <TotalDisplay />}
+        {activeChart === 'money' && <MoneyChart />}
       </div>
     </div>
   );
